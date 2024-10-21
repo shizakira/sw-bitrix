@@ -1,0 +1,8 @@
+.history
+.vscode
+.idea
+.fleet
+logs
+.env
+www/bitrix
+www/local/php_interface/vendor
