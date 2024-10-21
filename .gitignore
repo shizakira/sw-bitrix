@@ -4,5 +4,6 @@
 .fleet
 logs
 .env
+www/test.php
 www/bitrix
 www/local/php_interface/vendor
