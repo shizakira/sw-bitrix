@@ -13,17 +13,17 @@ $aMenuLinksExt = [];
 
 $elements = Specialists::getList([
     'select' => ['NAME', 'CODE'],
-])->fetchAll();
+])->fetchCollection();
 
 foreach ($elements as $element) {
     $aMenuLinksExt[] = [
-        $element['NAME'],
-        '/specialists/' . $element['CODE'] . '/',
+        $element->getName(),
+        '/specialists/' . $element->getCode() . '/',
         [],
         [],
         '',
     ];
 }
 
-$aMenuLinks = array_merge($aMenuLinks, $aMenuLinksExt);
+$aMenuLinks =[...$aMenuLinks, ...$aMenuLinksExt];
 ?>
