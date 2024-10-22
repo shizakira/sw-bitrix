@@ -14,11 +14,10 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?php if($APPLICATION->GetCurPage() === '/'):?>
-<section class="doctors">
-	<div class="container">
-		<h2 class="section__title">Наши специалисты</h2>
-		<ul class="doctors-list">
+<?php if ($APPLICATION->GetCurPage() === '/'): ?>
+
+	<div class="articles__main">
+		<ul class="articles-list">
             <?php foreach ($arResult["ITEMS"] as $arItem): ?>
                 <?php
                 $this->AddEditAction(
@@ -33,33 +32,36 @@ $this->setFrameMode(true);
                     ["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
                 );
                 ?>
-				<li class="doctors-list__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-					<a class="doctors-list__item-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
-						<div class="doctors-list__item-img-box">
+				<li class="articles-list__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+					<div class="articles-list__img-box">
+						<a class="articles-list__img-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
                             <?php
                             $arFileTmp = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
-                                ["width" => 302, "height" => 218],
+                                ["width" => 166, "height" => 111],
                                 BX_RESIZE_IMAGE_EXACT,
                                 true,
                             );
                             ?>
-							<img class="doctors-list__item-img"
-							     src="<?= $arFileTmp['src'] ?>" alt="<?= $arItem['NAME'] ?>">
+							<img class="articles-list__img"
+							     src="<?= $arFileTmp['src'] ?>"
+							     alt="<?= $arItem['NAME'] ?>">
+						</a>
+					</div>
+					<div class="articles-list__content">
+						<a class="articles-list__content-title-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+							<h3 class="articles-list__content-title"><?= $arItem['NAME'] ?>"</h3>
+						</a>
+						<div class="articles-list__content-description">
+							<p><?= $arItem['PREVIEW_TEXT'] ?>"⠀</p>
 						</div>
-						<div class="doctors-list__item-content">
-							<h3 class="doctors-list__item-title"><?= $arItem['NAME'] ?></h3>
-							<div class="doctors-list__item-degree"><?= $arItem['PREVIEW_TEXT'] ?></div>
-							<div class="doctors-list__item-experience">
-                                <?= $arItem['DISPLAY_PROPERTIES']['WORK_EXPERIENCE']['VALUE'] ?>
-							</div>
-							<div class="doctors-list__item-btn-more btn btn__more">Подробнее</div>
-						</div>
-					</a>
+						<a class="articles-list__content-btn-link btn btn__more"
+						   href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее</a>
+					</div>
 				</li>
             <?php endforeach; ?>
 		</ul>
-		<a class="doctors__btn btn btn__primary" href="javascript:">Смотреть всех (25)</a>
 	</div>
-</section>
-<?php endif ?>
+
+<?php endif; ?>
+
