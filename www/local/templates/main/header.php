@@ -23,7 +23,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
     <?php $APPLICATION->ShowHead(); ?>
 </head>
 <body>
-    <?php $APPLICATION->ShowPanel(); ?>
+<?php $APPLICATION->ShowPanel(); ?>
 <div class="page">
 	<header class="header header--fixed">
 		<div class="container">
@@ -59,60 +59,25 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 					<div class="container">
 						<div class="header__nav-wrapper">
 							<div class="header__nav-top-content"></div>
-							<ul class="nav__list">
-								<li class="nav__list-item">
-									<a class="nav__list-link nav__item-toggler" href="javascript:">
-										<span></span> Специалисты
-									</a>
-									<ul class="nav-sub__list">
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Валеева Венера
-												Исмаиловна</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Дементьева Наталья
-												Владимировна</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Савельева Нина Юрьевна</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Савельева Нина Юрьевна</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Ярцева Ирина Артуровна</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav__list-item">
-									<a class="nav__list-link nav__item-toggler" href="javascript:">
-										<span></span> О клинике
-									</a>
-									<ul class="nav-sub__list">
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Лицензии</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Правовая информация</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Реквизиты</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Партнеры</a>
-										</li>
-										<li class="nav-sub__list-item">
-											<a class="nav-sub__list-link" href="javascript:">Вакансии</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav__list-item">
-									<a class="nav__list-link" href="javascript:">Статьи</a>
-									<a class="nav__list-link" href="javascript:">Прайс-лист</a>
-									<a class="nav__list-link" href="javascript:">Акции</a>
-									<a class="nav__list-link" href="javascript:">Контакты</a>
-								</li>
-							</ul>
+                            <?php $APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "header_nav",
+                                [
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "CHILD_MENU_TYPE" => "submain",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "2",
+                                    "MENU_CACHE_GET_VARS" => [
+                                    ],
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "A",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "ROOT_MENU_TYPE" => "main",
+                                    "USE_EXT" => "Y",
+                                    "COMPONENT_TEMPLATE" => "footer_nav",
+                                ],
+                                false,
+                            ); ?>
 						</div>
 					</div>
 				</nav>

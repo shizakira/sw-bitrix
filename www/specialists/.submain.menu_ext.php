@@ -14,6 +14,7 @@ $aMenuLinksExt = [];
 $elements = Specialists::getList([
     'select' => ['ID', 'NAME'],
 ])->fetchAll();
+
 foreach ($elements as $element) {
     $aMenuLinksExt[] = [
         $element['NAME'],

@@ -20,18 +20,38 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 					<ul class="info-list">
 						<li class="info-list__item info-list__item--phone">
 							<div class="info-list__item-text">
-								<a class="info-list__item-link" href="tel:+73452562727"><span>+7 (3452)</span> 56-27-27</a>
+                                <?php $APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    [
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_TEMPLATE_PATH . "/include_areas/footer_phone_one.php",
+                                    ],
+                                ); ?>
 							</div>
 						</li>
 						<li class="info-list__item info-list__item--phone">
 							<div class="info-list__item-text">
-								<a class="info-list__item-link" href="tel:+73452608628"><span>+7 (3452)</span>
-									608-628</a>
+                                <?php $APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    [
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_TEMPLATE_PATH . "/include_areas/footer_phone_two.php",
+                                    ],
+                                ); ?>
 							</div>
 						</li>
 						<li class="info-list__item info-list__item--email">
 							<div class="info-list__item-text">
-								<a class="info-list__item-link" href="mailto:info@1cardioclinic.ru">info<span>@1cardioclinic.ru</span></a>
+                                <?php $APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    "",
+                                    [
+                                        "AREA_FILE_SHOW" => "file",
+                                        "PATH" => SITE_TEMPLATE_PATH . "/include_areas/footer_phone_email.php",
+                                    ],
+                                ); ?>
 							</div>
 						</li>
 					</ul>
@@ -39,60 +59,80 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 			</div>
 			<div class="footer__bottom">
 				<nav class="footer-nav">
-					<ul class="footer-nav__list">
-						<li class="footer-nav__item">
-							<a class="footer-nav__item-link" href="javascript:">Специалисты</a>
-							<ul class="footer-sub-nav__list">
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Валеева Венера
-										Исмаиловна</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Дементьева Наталья
-										Владимировна</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Савельева Нина Юрьевна</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Савельева Нина Юрьевна</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Ярцева Ирина Артуровна</a>
-								</li>
-							</ul>
-						</li>
-						<li class="footer-nav__item">
-							<a class="footer-nav__item-link" href="javascript:">О клинике</a>
-							<ul class="footer-sub-nav__list">
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Лицензии</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Правовая информация</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Реквизиты</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Партнеры</a>
-								</li>
-								<li class="footer-sub-nav__item">
-									<a class="footer-sub-nav__item-link" href="javascript:">Вакансии</a>
-								</li>
-							</ul>
-						</li>
-						<li class="footer-nav__item">
-							<a class="footer-nav__item-link" href="javascript:">Статьи</a>
-							<a class="footer-nav__item-link" href="javascript:">Прайс-лист</a>
-							<a class="footer-nav__item-link" href="javascript:">Акции</a>
-							<a class="footer-nav__item-link" href="javascript:">Контакты</a>
-						</li>
-					</ul>
+<!--					<ul class="footer-nav__list">-->
+<!--						<li class="footer-nav__item">-->
+<!--							<a class="footer-nav__item-link" href="javascript:">Специалисты</a>-->
+<!--							<ul class="footer-sub-nav__list">-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Валеева Венера-->
+<!--										Исмаиловна</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Дементьева Наталья-->
+<!--										Владимировна</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Савельева Нина Юрьевна</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Савельева Нина Юрьевна</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Ярцева Ирина Артуровна</a>-->
+<!--								</li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="footer-nav__item">-->
+<!--							<a class="footer-nav__item-link" href="javascript:">О клинике</a>-->
+<!--							<ul class="footer-sub-nav__list">-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Лицензии</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Правовая информация</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Реквизиты</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Партнеры</a>-->
+<!--								</li>-->
+<!--								<li class="footer-sub-nav__item">-->
+<!--									<a class="footer-sub-nav__item-link" href="javascript:">Вакансии</a>-->
+<!--								</li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="footer-nav__item">-->
+<!--							<a class="footer-nav__item-link" href="javascript:">Статьи</a>-->
+<!--							<a class="footer-nav__item-link" href="javascript:">Прайс-лист</a>-->
+<!--							<a class="footer-nav__item-link" href="javascript:">Акции</a>-->
+<!--							<a class="footer-nav__item-link" href="javascript:">Контакты</a>-->
+<!--						</li>-->
+<!--					</ul>-->
+                    <?php $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "footer_nav",
+                        [
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "submain",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "2",
+                            "MENU_CACHE_GET_VARS" => [
+                            ],
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "A",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "main",
+                            "USE_EXT" => "Y",
+                            "COMPONENT_TEMPLATE" => "footer_nav",
+                        ],
+                        false,
+                    ); ?>
 				</nav>
 			</div>
 			<div class="footer__watermark">
-				<div class="footer__watermark-copyright">© 2023 © ООО «Сибирь-Ассист»,Первая Кардиоклиника.Все права
+				<div class="footer__watermark-copyright">
+					© 2023 © ООО «Сибирь-Ассист»,Первая Кардиоклиника.Все права
 					защищены.Информация на сайте не является публичной офертой.
 				</div>
 				<a class="footer__watermark-dev-link" href="javascript:">
@@ -115,14 +155,31 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 					</div>
 				</div>
 			</div>
-            <?php $APPLICATION->IncludeComponent(
-                "bitrix:main.include",
-                "",
-                [
-                    "AREA_FILE_SHOW" => "file",
-                    "PATH" => SITE_TEMPLATE_PATH . "/include_areas/modal_consultations.php",
-                ],
-            ); ?>
+			<div class="modal__content-img-box">
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    [
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_TEMPLATE_PATH . "/include_areas/img_modal_consultations.php",
+                    ],
+                ); ?>
+			</div>
+			<div class="modal__content-wrapper">
+				<div class="modal__content-text">
+					<p>
+                        <?php $APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            [
+                                "AREA_FILE_SHOW" => "file",
+                                "PATH" => SITE_TEMPLATE_PATH . "/include_areas/text_modal_consultations.php",
+                            ],
+                        ); ?>
+					</p>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </dialog>
