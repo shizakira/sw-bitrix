@@ -61,7 +61,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 							<div class="header__nav-top-content"></div>
                             <?php $APPLICATION->IncludeComponent(
                                 "bitrix:menu",
-                                "header_nav",
+                                "header_menu",
                                 [
                                     "ALLOW_MULTI_SELECT" => "N",
                                     "CHILD_MENU_TYPE" => "submain",
@@ -74,7 +74,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
                                     "MENU_CACHE_USE_GROUPS" => "Y",
                                     "ROOT_MENU_TYPE" => "main",
                                     "USE_EXT" => "Y",
-                                    "COMPONENT_TEMPLATE" => "footer_nav",
+                                    "COMPONENT_TEMPLATE" => "header_nav",
                                 ],
                                 false,
                             ); ?>

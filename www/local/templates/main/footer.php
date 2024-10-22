@@ -59,59 +59,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 			</div>
 			<div class="footer__bottom">
 				<nav class="footer-nav">
-<!--					<ul class="footer-nav__list">-->
-<!--						<li class="footer-nav__item">-->
-<!--							<a class="footer-nav__item-link" href="javascript:">Специалисты</a>-->
-<!--							<ul class="footer-sub-nav__list">-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Валеева Венера-->
-<!--										Исмаиловна</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Дементьева Наталья-->
-<!--										Владимировна</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Савельева Нина Юрьевна</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Савельева Нина Юрьевна</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Ярцева Ирина Артуровна</a>-->
-<!--								</li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="footer-nav__item">-->
-<!--							<a class="footer-nav__item-link" href="javascript:">О клинике</a>-->
-<!--							<ul class="footer-sub-nav__list">-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Лицензии</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Правовая информация</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Реквизиты</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Партнеры</a>-->
-<!--								</li>-->
-<!--								<li class="footer-sub-nav__item">-->
-<!--									<a class="footer-sub-nav__item-link" href="javascript:">Вакансии</a>-->
-<!--								</li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="footer-nav__item">-->
-<!--							<a class="footer-nav__item-link" href="javascript:">Статьи</a>-->
-<!--							<a class="footer-nav__item-link" href="javascript:">Прайс-лист</a>-->
-<!--							<a class="footer-nav__item-link" href="javascript:">Акции</a>-->
-<!--							<a class="footer-nav__item-link" href="javascript:">Контакты</a>-->
-<!--						</li>-->
-<!--					</ul>-->
                     <?php $APPLICATION->IncludeComponent(
                         "bitrix:menu",
-                        "footer_nav",
+                        "footer_menu",
                         [
                             "ALLOW_MULTI_SELECT" => "N",
                             "CHILD_MENU_TYPE" => "submain",
@@ -132,7 +82,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 			</div>
 			<div class="footer__watermark">
 				<div class="footer__watermark-copyright">
-					© 2023 © ООО «Сибирь-Ассист»,Первая Кардиоклиника.Все права
+					© <?= date('Y') ?> © ООО «Сибирь-Ассист»,Первая Кардиоклиника.Все права
 					защищены.Информация на сайте не является публичной офертой.
 				</div>
 				<a class="footer__watermark-dev-link" href="javascript:">

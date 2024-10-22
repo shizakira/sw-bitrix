@@ -52,7 +52,7 @@
                             <?php else: ?>
 								<li class="footer-sub-nav__item">
 									<a href="<?= $arItem["LINK"] ?>"
-									   class="footer-sub-nav__item"><?= $arItem["TEXT"] ?></a>
+									   class="footer-sub-nav__item-link"><?= $arItem["TEXT"] ?></a>
 								</li>
                             <?php endif ?>
                         <?php else: ?>
