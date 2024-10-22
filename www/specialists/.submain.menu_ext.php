@@ -12,13 +12,13 @@ Loader::includeModule('iblock');
 $aMenuLinksExt = [];
 
 $elements = Specialists::getList([
-    'select' => ['ID', 'NAME'],
+    'select' => ['NAME', 'CODE'],
 ])->fetchAll();
 
 foreach ($elements as $element) {
     $aMenuLinksExt[] = [
         $element['NAME'],
-        '/specialists/' . $element['ID'] . '/',
+        '/specialists/' . $element['CODE'] . '/',
         [],
         [],
         '',
