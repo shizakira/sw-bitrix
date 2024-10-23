@@ -161,7 +161,8 @@ $APPLICATION->SetTitle('Главная');
 						<div class="form__input-box decore--phone">
 							<input class="form__input" type="tel" name="" id="" placeholder="Номер телефона*" required>
 						</div>
-						<button class="form__btn btn btn__tertiary" type="submit">Отправить</button>
+						<button class="form__btn btn btn__tertiary" type="submit">
+						</button>
 						<div class="form__agree">
 							<p class="form__agree-text">Нажимая кнопку “Отправить”, вы соглашаетесь с
 								<a class="form__agree-link" href="javascript:">политикой конфиденциальности</a>
