@@ -18,7 +18,7 @@ $elements = Specialists::getList([
 foreach ($elements as $element) {
     $aMenuLinksExt[] = [
         $element->getName(),
-        '/specialists/' . $element->getCode() . '/',
+        '/specialists/' . $element->getCode(),
         [],
         [],
         '',

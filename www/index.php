@@ -20,7 +20,7 @@ $APPLICATION->SetTitle('Главная');
         "CACHE_TIME" => "36000000",
         "CACHE_TYPE" => "A",
         "CHECK_DATES" => "Y",
-        "DETAIL_URL" => "/specialists/detail.php?ELEMENT_ID=#ELEMENT_ID#",
+        "DETAIL_URL" => "/specialists/#ELEMENT_CODE#",
         "DISPLAY_BOTTOM_PAGER" => "Y",
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
@@ -68,7 +68,7 @@ $APPLICATION->SetTitle('Главная');
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:news.list",
                     "articles_list",
-                    array(
+                    [
                         "ACTIVE_DATE_FORMAT" => "d.m.Y",
                         "ADD_SECTIONS_CHAIN" => "Y",
                         "AJAX_MODE" => "N",
@@ -81,19 +81,19 @@ $APPLICATION->SetTitle('Главная');
                         "CACHE_TIME" => "36000000",
                         "CACHE_TYPE" => "A",
                         "CHECK_DATES" => "Y",
-                        "DETAIL_URL" => "/articles/detail.php?ELEMENT_ID=#ELEMENT_ID#",
+                        "DETAIL_URL" => "/articles/#ELEMENT_ID#",
                         "DISPLAY_BOTTOM_PAGER" => "Y",
                         "DISPLAY_DATE" => "Y",
                         "DISPLAY_NAME" => "Y",
                         "DISPLAY_PICTURE" => "Y",
                         "DISPLAY_PREVIEW_TEXT" => "Y",
                         "DISPLAY_TOP_PAGER" => "N",
-                        "FIELD_CODE" => array(
+                        "FIELD_CODE" => [
                             0 => "NAME",
                             1 => "PREVIEW_TEXT",
                             2 => "PREVIEW_PICTURE",
                             3 => "",
-                        ),
+                        ],
                         "FILTER_NAME" => "",
                         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                         "IBLOCK_ID" => "2",
@@ -112,11 +112,11 @@ $APPLICATION->SetTitle('Главная');
                         "PARENT_SECTION" => "",
                         "PARENT_SECTION_CODE" => "",
                         "PREVIEW_TRUNCATE_LEN" => "",
-                        "PROPERTY_CODE" => array(
+                        "PROPERTY_CODE" => [
                             0 => "",
                             1 => "WORK_EXPERIENCE",
                             2 => "",
-                        ),
+                        ],
                         "SET_BROWSER_TITLE" => "Y",
                         "SET_LAST_MODIFIED" => "N",
                         "SET_META_DESCRIPTION" => "Y",
@@ -129,10 +129,10 @@ $APPLICATION->SetTitle('Главная');
                         "SORT_ORDER1" => "DESC",
                         "SORT_ORDER2" => "ASC",
                         "STRICT_SECTION_CHECK" => "N",
-                        "COMPONENT_TEMPLATE" => "articles_list"
-                    ),
-                    false
-                );?>
+                        "COMPONENT_TEMPLATE" => "articles_list",
+                    ],
+                    false,
+                ); ?>
 				<div class="articles__form">
 					<form class="form">
 						<h3 class="form__title">Оставить отзыв</h3>

@@ -1,19 +1,19 @@
 <?php
 $arUrlRewrite=array (
-  1 => 
+  4 => 
   array (
-    'CONDITION' => '#^/specialists/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/index.php',
+    'CONDITION' => '#^/articles/([0-9]+)#',
+    'RULE' => 'ELEMENT_ID=$1',
+    'ID' => '',
+    'PATH' => '/articles/detail.php',
     'SORT' => 100,
   ),
-  2 => 
+  3 => 
   array (
-    'CONDITION' => '#^/articles/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/index.php',
+    'CONDITION' => '#^/specialists/([a-zA-Z0-9-]+)#',
+    'RULE' => 'ELEMENT_CODE=$1',
+    'ID' => '',
+    'PATH' => '/specialists/detail.php',
     'SORT' => 100,
   ),
   0 => 

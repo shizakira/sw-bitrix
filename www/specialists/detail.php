@@ -2,7 +2,9 @@
 
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetTitle("Наши специалисты");
-?><?$APPLICATION->IncludeComponent(
+?>
+
+<?php $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"specialists_detail",
 	Array(
@@ -26,7 +28,7 @@ $APPLICATION->SetTitle("Наши специалисты");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"ELEMENT_CODE" => "",
+		"ELEMENT_CODE" => $_REQUEST["ELEMENT_CODE"],
 		"ELEMENT_ID" => $_REQUEST["ELEMENT_ID"],
 		"FIELD_CODE" => array("",""),
 		"IBLOCK_ID" => "1",
@@ -51,8 +53,14 @@ $APPLICATION->SetTitle("Наши специалисты");
 		"SHOW_404" => "N",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_PERMISSIONS" => "N",
-		"USE_SHARE" => "N"
-	)
+		"USE_SHARE" => "N",
+        "SEF_MODE" => "Y",
+        "SEF_FOLDER" => "/specialists/",
+        "SEF_URL_TEMPLATES" => [
+            "detail" => "#ELEMENT_CODE#/",
+        ],
+    
+    )
 );?><?php
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>
