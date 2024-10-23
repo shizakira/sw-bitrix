@@ -59,6 +59,7 @@ $APPLICATION->SetTitle('Главная');
         "SORT_ORDER1" => "DESC",
         "SORT_ORDER2" => "ASC",
         "STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "specialists_list",
     ],
 ); ?>
 	<section class="articles">

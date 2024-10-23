@@ -1,18 +1,18 @@
 <?php
 $arUrlRewrite=array (
-  1 => 
+  3 => 
   array (
     'CONDITION' => '#^/specialists/#',
     'RULE' => '',
-    'ID' => 'bitrix:news',
+    'ID' => 'sunweb:news',
     'PATH' => '/specialists/index.php',
     'SORT' => 100,
   ),
-  2 => 
+  4 => 
   array (
     'CONDITION' => '#^/articles/#',
     'RULE' => '',
-    'ID' => 'bitrix:news',
+    'ID' => 'sunweb:news',
     'PATH' => '/articles/index.php',
     'SORT' => 100,
   ),

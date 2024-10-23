@@ -64,7 +64,7 @@ $this->setFrameMode(true);
             <?php endforeach; ?>
 		</ul>
 		<a class="doctors__btn btn btn__primary" href="javascript:">
-			<?= Loc::getMessage('SEE_EVERYONE')?> (<?= count($arResult['ITEMS'])?>)
+			<?= Loc::getMessage('SEE_EVERYONE')?> (<?= $arResult['SPECIALISTS_COUNT']?>)
 		</a>
 	</div>
 </section>
