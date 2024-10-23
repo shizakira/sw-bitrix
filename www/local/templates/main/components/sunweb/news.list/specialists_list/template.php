@@ -34,22 +34,14 @@ $this->setFrameMode(true);
                     $arItem['ID'],
                     $arItem['DELETE_LINK'],
                     CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
-                    ["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
+                    ["CONFIRM" => Loc::getMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
                 );
                 ?>
 				<li class="doctors-list__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 					<a class="doctors-list__item-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
 						<div class="doctors-list__item-img-box">
-                            <?php
-                            $arFileTmp = CFile::ResizeImageGet(
-                                $arItem['PREVIEW_PICTURE'],
-                                ["width" => 302, "height" => 218],
-                                BX_RESIZE_IMAGE_PROPORTIONAL,
-                                false,
-                            );
-                            ?>
 							<img class="doctors-list__item-img"
-							     src="<?= $arFileTmp['src'] ?>" alt="<?= $arItem['NAME'] ?>">
+							     src="<?= $arItem['PREVIEW_PICTURE']['SRC_DESKTOP'] ?>" alt="<?= $arItem['NAME'] ?>">
 						</div>
 						<div class="doctors-list__item-content">
 							<h3 class="doctors-list__item-title"><?= $arItem['NAME'] ?></h3>
