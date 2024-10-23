@@ -1,4 +1,4 @@
-<?
+<?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/urlrewrite.php');
 
 CHTTP::SetStatus("404 Not Found");
@@ -16,5 +16,7 @@ $APPLICATION->IncludeComponent("bitrix:main.map", ".default", Array(
 	"CACHE_TIME"	=>	"36000000"
 	)
 );
+echo '404';
+
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

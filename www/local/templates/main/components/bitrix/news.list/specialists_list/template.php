@@ -39,8 +39,8 @@ $this->setFrameMode(true);
                             $arFileTmp = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
                                 ["width" => 302, "height" => 218],
-                                BX_RESIZE_IMAGE_EXACT,
-                                true,
+                                BX_RESIZE_IMAGE_PROPORTIONAL,
+                                false,
                             );
                             ?>
 							<img class="doctors-list__item-img"

@@ -38,8 +38,8 @@ $this->setFrameMode(true);
                             $arFileTmp = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
                                 ["width" => 166, "height" => 111],
-                                BX_RESIZE_IMAGE_EXACT,
-                                true,
+                                BX_RESIZE_IMAGE_PROPORTIONAL,
+                                false,
                             );
                             ?>
 							<img class="articles-list__img"
