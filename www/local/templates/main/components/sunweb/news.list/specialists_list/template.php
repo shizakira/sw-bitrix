@@ -12,6 +12,11 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
 $this->setFrameMode(true);
 ?>
 <section class="doctors">
@@ -58,6 +63,8 @@ $this->setFrameMode(true);
 				</li>
             <?php endforeach; ?>
 		</ul>
-		<a class="doctors__btn btn btn__primary" href="javascript:">Смотреть всех (25)</a>
+		<a class="doctors__btn btn btn__primary" href="javascript:">
+			<?= Loc::getMessage('SEE_EVERYONE')?> (<?= count($arResult['ITEMS'])?>)
+		</a>
 	</div>
 </section>

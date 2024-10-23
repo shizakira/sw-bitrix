@@ -60,7 +60,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 						<div class="header__nav-wrapper">
 							<div class="header__nav-top-content"></div>
                             <?php $APPLICATION->IncludeComponent(
-                                "bitrix:menu",
+                                "sunweb:menu",
                                 "header_menu",
                                 [
                                     "ALLOW_MULTI_SELECT" => "N",

@@ -60,7 +60,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 			<div class="footer__bottom">
 				<nav class="footer-nav">
                     <?php $APPLICATION->IncludeComponent(
-                        "bitrix:menu",
+                        "sunweb:menu",
                         "footer_menu",
                         [
                             "ALLOW_MULTI_SELECT" => "N",

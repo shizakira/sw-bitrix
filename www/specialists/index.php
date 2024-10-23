@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Специалисты");
 ?>
 
 <?php $APPLICATION->IncludeComponent(
-    "bitrix:news",
+    "sunweb:news",
     "specialists",
     [
         "ADD_ELEMENT_CHAIN" => "N",    // Включать название элемента в цепочку навигации
@@ -93,4 +93,6 @@ $APPLICATION->SetTitle("Специалисты");
         ],
     ],
     false,
-); ?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+); ?>
+
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -5,7 +5,7 @@ $APPLICATION->SetTitle('Главная');
 ?>
 
 <?php $APPLICATION->IncludeComponent(
-    "bitrix:news.list",
+    "sunweb:news.list",
     "specialists_list",
     [
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
@@ -66,7 +66,7 @@ $APPLICATION->SetTitle('Главная');
 			<h2 class="section__title">Статьи</h2>
 			<div class="articles__wrapper">
                 <?php $APPLICATION->IncludeComponent(
-                    "bitrix:news.list",
+                    "sunweb:news.list",
                     "articles_list",
                     [
                         "ACTIVE_DATE_FORMAT" => "d.m.Y",
@@ -101,7 +101,7 @@ $APPLICATION->SetTitle('Главная');
                         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
                         "INCLUDE_SUBSECTIONS" => "Y",
                         "MESSAGE_404" => "",
-                        "NEWS_COUNT" => "20",
+                        "NEWS_COUNT" => "10",
                         "PAGER_BASE_LINK_ENABLE" => "N",
                         "PAGER_DESC_NUMBERING" => "N",
                         "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",

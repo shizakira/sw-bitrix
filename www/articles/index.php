@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Статьи");
-?><?$APPLICATION->IncludeComponent("bitrix:news", "articles", Array(
+?><?$APPLICATION->IncludeComponent("sunweb:news", "articles", Array(
 	"ADD_ELEMENT_CHAIN" => "N",	// Включать название элемента в цепочку навигации
 		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX
