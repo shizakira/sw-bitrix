@@ -14,7 +14,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?php if ($APPLICATION->GetCurPage() === '/'): ?>
 
 	<div class="articles__main">
 		<ul class="articles-list">
@@ -63,5 +62,4 @@ $this->setFrameMode(true);
 		</ul>
 	</div>
 
-<?php endif; ?>
 

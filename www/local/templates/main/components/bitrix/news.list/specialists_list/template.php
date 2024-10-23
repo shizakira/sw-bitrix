@@ -14,7 +14,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?php if($APPLICATION->GetCurPage() === '/'):?>
 <section class="doctors">
 	<div class="container">
 		<h2 class="section__title">Наши специалисты</h2>
@@ -62,4 +61,3 @@ $this->setFrameMode(true);
 		<a class="doctors__btn btn btn__primary" href="javascript:">Смотреть всех (25)</a>
 	</div>
 </section>
-<?php endif ?>
