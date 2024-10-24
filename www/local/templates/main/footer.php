@@ -3,6 +3,10 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
 ?>
 
 </main>
@@ -13,7 +17,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 				<div class="footer__logo logo">
 					<a class="logo__link" href="/">
 						<img src="<?= SITE_TEMPLATE_PATH ?>/images/logo--footer.svg"
-						     alt="Логотип: Первая кардиоклиника">
+						     alt="<?= Loc::getMessage('LOGO_ALT')?>">
 					</a>
 				</div>
 				<div class="footer__group">
@@ -83,10 +87,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 			<div class="footer__watermark">
 				<div class="footer__watermark-copyright">
 					© <?= date('Y') ?> ©
-					ООО «Сибирь-Ассист»,Первая Кардиоклиника. Все права защищены. Информация на сайте не является публичной офертой.
+					<?= loc::getMessage('COPYRIGHTS')?>
 				</div>
 				<a class="footer__watermark-dev-link" href="javascript:">
-					<img src="<?= SITE_TEMPLATE_PATH ?>/images/dev-logo.svg" alt="Наш надежный digital-партнер: SunWeb">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/images/dev-logo.svg" alt="<?= Loc::getMessage('OUR_PARTNER')?>">
 				</a>
 			</div>
 		</div>

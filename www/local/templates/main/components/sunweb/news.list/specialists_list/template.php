@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 ?>
 <section class="doctors">
 	<div class="container">
-		<h2 class="section__title">Наши специалисты</h2>
+		<h2 class="section__title"><?= loc::getMessage('OUR_SPECIALISTS')?></h2>
 		<ul class="doctors-list">
             <?php foreach ($arResult["ITEMS"] as $arItem): ?>
                 <?php

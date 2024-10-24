@@ -5,21 +5,23 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 
 use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
 
 $asset = Asset::getInstance();
 
 $asset->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
+$asset->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
+$asset->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH ?>/images/favicon.svg" type="image/svg+xml">
-	<title>Первая кардиоклиника в Тюмени, официальный сайт кардиологии на ул Фабричной д 7</title>
+	<title><?php $APPLICATION->ShowTitle() ?></title>
     <?php $APPLICATION->ShowHead(); ?>
 </head>
 <body>
@@ -30,7 +32,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 			<div class="header__bottom">
 				<div class="header__logo logo">
 					<a class="logo__link" href="/">
-						<img src="<?= SITE_TEMPLATE_PATH ?>/images/logo.gif" alt="Логотип: Первая кардиоклиника">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/images/logo.gif" alt="<?= Loc::getMessage('LOGO_ALT')?>">
 					</a>
 				</div>
 
@@ -44,7 +46,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 									stroke="#8D8D8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</div>
-						<div class="header__exclamation-text">Онлайн консультации</div>
+						<div class="header__exclamation-text"><?= Loc::getMessage('ONLINE_CONSULTATION')?></div>
 					</div>
 					<button class="header__btn btn__primary menu nav-menu__toggler" title="Меню сайта">
 						<div class="menu__wrapper">
@@ -52,7 +54,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 							<span></span>
 							<span></span>
 						</div>
-						<div class="header__btn-text">Меню сайта</div>
+						<div class="header__btn-text"><?= Loc::getMessage('SITE_MENU')?></div>
 					</button>
 				</div>
 				<nav class="header__nav nav">
@@ -86,4 +88,4 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
 	</header>
 	<main class="main">
 
-						
+	
