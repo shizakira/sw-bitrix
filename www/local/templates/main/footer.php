@@ -16,7 +16,7 @@ Loc::loadMessages(__FILE__);
 			<div class="footer__top">
 				<div class="footer__logo logo">
 					<a class="logo__link" href="/">
-						<img src="<?= SITE_TEMPLATE_PATH ?>/images/logo--footer.svg"
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo--footer.svg"
 						     alt="<?= Loc::getMessage('LOGO_ALT')?>">
 					</a>
 				</div>
@@ -90,7 +90,7 @@ Loc::loadMessages(__FILE__);
 					<?= loc::getMessage('COPYRIGHTS')?>
 				</div>
 				<a class="footer__watermark-dev-link" href="javascript:">
-					<img src="<?= SITE_TEMPLATE_PATH ?>/images/dev-logo.svg" alt="<?= Loc::getMessage('OUR_PARTNER')?>">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/dev-logo.svg" alt="<?= Loc::getMessage('OUR_PARTNER')?>">
 				</a>
 			</div>
 		</div>

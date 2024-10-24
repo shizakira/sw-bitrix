@@ -11,17 +11,19 @@ Loc::loadMessages(__FILE__);
 
 $asset = Asset::getInstance();
 
-$asset->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
-$asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
+$asset->addCss(SITE_TEMPLATE_PATH . '/assets/css/style.css');
+$asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/main.js');
 $asset->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
 $asset->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+
+$APPLICATION->SetTitle('Первая кардиоклиника в Тюмени, официальный сайт кардиологии на ул Фабричной д 7');
 
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH ?>/images/favicon.svg" type="image/svg+xml">
-	<title><?php $APPLICATION->ShowTitle() ?></title>
+	<link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH ?>/assets/images/favicon.svg" type="image/svg+xml">
+	<title><?php $APPLICATION->ShowTitle(false) ?></title>
     <?php $APPLICATION->ShowHead(); ?>
 </head>
 <body>
@@ -32,12 +34,12 @@ $asset->addString('<meta name="viewport" content="width=device-width, initial-sc
 			<div class="header__bottom">
 				<div class="header__logo logo">
 					<a class="logo__link" href="/">
-						<img src="<?= SITE_TEMPLATE_PATH ?>/images/logo.gif" alt="<?= Loc::getMessage('LOGO_ALT')?>">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.gif" alt="<?= Loc::getMessage('LOGO_ALT')?>">
 					</a>
 				</div>
 
 				<div class="header__group-btn">
-					<div class="header__exclamation modal__btn" data-target="#consultation" title="Онлайн консультации">
+					<div class="header__exclamation modal__btn" data-target="#consultation" title="<?= Loc::getMessage('ONLINE_CONSULTATION')?>">
 						<div class="header__exclamation-icon">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 							     xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +50,7 @@ $asset->addString('<meta name="viewport" content="width=device-width, initial-sc
 						</div>
 						<div class="header__exclamation-text"><?= Loc::getMessage('ONLINE_CONSULTATION')?></div>
 					</div>
-					<button class="header__btn btn__primary menu nav-menu__toggler" title="Меню сайта">
+					<button class="header__btn btn__primary menu nav-menu__toggler" title="<?= Loc::getMessage('SITE_MENU')?>">
 						<div class="menu__wrapper">
 							<span></span>
 							<span></span>

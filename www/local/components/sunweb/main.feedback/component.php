@@ -77,13 +77,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset(
             if (Loader::includeModule('iblock')) {
                 $element = new CIBlockElement();
                 $iblockID = $arParams['IBLOCK_ID'];
-                $arTranslitParams = ["replace_space" => "-", "replace_other" => "-"];
-                $code = Cutil::translit(strtolower($arFields['AUTHOR']), "ru", $arTranslitParams);
                 $arLoadProductArray = [
                     "IBLOCK_ID" => $iblockID,
                     "ACTIVE" => "Y",
                     "NAME" => $arFields['AUTHOR'],
-                    "CODE" => $code,
                     "PREVIEW_TEXT" => $arFields['FEEDBACK_TYPE'],
                     "DETAIL_TEXT" => $arFields['TEXT'],
                     "PROPERTY_VALUES" => [
