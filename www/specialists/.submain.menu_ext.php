@@ -15,10 +15,11 @@ $elements = Specialists::getList([
     'select' => ['NAME', 'CODE'],
 ])->fetchCollection();
 
+
 foreach ($elements as $element) {
     $aMenuLinksExt[] = [
         $element->getName(),
-        '/specialists/' . $element->getCode(),
+        '/specialists/' . $element->getCode() . '/',
         [],
         [],
         '',

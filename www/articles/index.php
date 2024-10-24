@@ -86,7 +86,7 @@ $APPLICATION->SetTitle("Статьи");
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
-			"detail" => "#ELEMENT_ID#",
+			"detail" => "#ELEMENT_ID#/",
 		)
 	),
 	false

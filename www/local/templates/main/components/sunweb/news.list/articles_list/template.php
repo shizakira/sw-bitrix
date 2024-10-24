@@ -15,6 +15,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadLanguageFile(__FILE__);
 ?>
 
 <div class="articles__main">
@@ -30,7 +34,7 @@ $this->setFrameMode(true);
                 $arItem['ID'],
                 $arItem['DELETE_LINK'],
                 CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
-                ["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
+                ["CONFIRM" => loc::getMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
             );
             ?>
             <li class="articles-list__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
@@ -50,7 +54,7 @@ $this->setFrameMode(true);
                     </div>
                     <a class="articles-list__content-btn-link btn btn__more"
                        href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
-	                    Подробнее
+	                    <?= loc::getMessage('MORE_DETAILS')?>
                     </a>
                 </div>
             </li>

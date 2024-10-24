@@ -2,9 +2,7 @@
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Специалисты");
-?>
-
-<?php $APPLICATION->IncludeComponent(
+?><?$APPLICATION->IncludeComponent(
 	"sunweb:news", 
 	"specialists", 
 	array(
@@ -32,7 +30,7 @@ $APPLICATION->SetTitle("Специалисты");
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "WORK_EXPERIENCE",
+			0 => "",
 			1 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
@@ -48,7 +46,7 @@ $APPLICATION->SetTitle("Специалисты");
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array(
-			0 => "",
+			0 => "PREVIEW_TEXT",
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
@@ -67,6 +65,7 @@ $APPLICATION->SetTitle("Специалисты");
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Новости",
 		"PREVIEW_TRUNCATE_LEN" => "",
+		"SEF_FOLDER" => "/specialists/",
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
@@ -85,14 +84,11 @@ $APPLICATION->SetTitle("Специалисты");
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "specialists",
-		"SEF_FOLDER" => "/specialists/",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
-			"detail" => "#ELEMENT_CODE#",
+			"detail" => "#ELEMENT_CODE#/",
 		)
 	),
 	false
-); ?>
-
-<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+);?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

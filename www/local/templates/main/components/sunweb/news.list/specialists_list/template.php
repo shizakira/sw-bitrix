@@ -49,13 +49,15 @@ $this->setFrameMode(true);
 							<div class="doctors-list__item-experience">
                                 <?= $arItem['DISPLAY_PROPERTIES']['WORK_EXPERIENCE']['VALUE'] ?>
 							</div>
-							<div class="doctors-list__item-btn-more btn btn__more">Подробнее</div>
+							<div class="doctors-list__item-btn-more btn btn__more">
+								<?= Loc::getMessage('MORE_DETAILS')?>
+							</div>
 						</div>
 					</a>
 				</li>
             <?php endforeach; ?>
 		</ul>
-		<a class="doctors__btn btn btn__primary" href="javascript:">
+		<a class="doctors__btn btn btn__primary" href="/specialists/">
 			<?= Loc::getMessage('SEE_EVERYONE')?> (<?= $arResult['SPECIALISTS_COUNT']?>)
 		</a>
 	</div>

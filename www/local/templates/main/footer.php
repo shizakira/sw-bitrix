@@ -83,14 +83,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 			<div class="footer__watermark">
 				<div class="footer__watermark-copyright">
 					© <?= date('Y') ?> ©
-                    <?php $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        "",
-                        [
-                            "AREA_FILE_SHOW" => "file",
-                            "PATH" => SITE_TEMPLATE_PATH . "/include_areas/footer_copyrights.php",
-                        ],
-                    ); ?>
+					ООО «Сибирь-Ассист»,Первая Кардиоклиника. Все права защищены. Информация на сайте не является публичной офертой.
 				</div>
 				<a class="footer__watermark-dev-link" href="javascript:">
 					<img src="<?= SITE_TEMPLATE_PATH ?>/images/dev-logo.svg" alt="Наш надежный digital-партнер: SunWeb">
