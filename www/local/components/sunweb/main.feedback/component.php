@@ -90,7 +90,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset(
                         "PHONE" => $arFields['PHONE'],
                     ],
                 ];
-                $element->Add($arLoadProductArray);
+                
+                if(!$element->Add($arLoadProductArray)){
+                    $arResult["ERROR_MESSAGE"][] = "Ошибка при отправке формы. Попробуйте позже.";
+                    $this->IncludeComponentTemplate();
+                    return;
+                }
+                
             }
             if (!empty($arParams["EVENT_MESSAGE_ID"])) {
                 foreach ($arParams["EVENT_MESSAGE_ID"] as $v) {
