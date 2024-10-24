@@ -22,7 +22,7 @@ Loc::loadMessages(__FILE__);
 <div class="articles__form">
     <?php if (!empty($arResult["ERROR_MESSAGE"])):?>
         <?php foreach ($arResult["ERROR_MESSAGE"] as $error):?>
-			<div class="form-error"><?=$error?></div>
+			<div><?=$error?></div>
         <?php endforeach;?>
     <?php endif;?>
     
@@ -36,15 +36,17 @@ Loc::loadMessages(__FILE__);
 		<h3 class="form__title"><?=Loc::getMessage("MFT_TITLE")?></h3>
 
 		<label class="form__label">
-			<input class="form__input form__input-radio" type="radio" name="feedback_type" value="clinic" checked="">
+			<input class="form__input form__input-radio" type="radio" name="feedback_type" value="clinic">
 			<span class="form__input-radio-style"></span>
 			<div class="form__label-text"><?=Loc::getMessage("MFT_CLINIC")?></div>
 		</label>
+		
 		<label class="form__label">
 			<input class="form__input form__input-radio" type="radio" name="feedback_type" value="doctor">
 			<span class="form__input-radio-style"></span>
 			<div class="form__label-text"><?=Loc::getMessage("MFT_DOCTOR")?></div>
 		</label>
+		
 		<label class="form__label">
 			<input class="form__input form__input-radio" type="radio" name="feedback_type" value="service">
 			<span class="form__input-radio-style"></span>
@@ -81,63 +83,3 @@ Loc::loadMessages(__FILE__);
 	</form>
 </div>
 
-<!--    --><?php //if (!empty($arResult["ERROR_MESSAGE"])) {
-//        foreach ($arResult["ERROR_MESSAGE"] as $v) {
-//            ShowError($v);
-//        }
-//    }
-//    if (!empty($arResult["OK_MESSAGE"])) {
-//        ?>
-<!--		<div class="mf-ok-text">--><?php //= $arResult["OK_MESSAGE"] ?><!--</div>--><?php
-//    }
-//    ?>
-<!---->
-<!--	<form action="--><?php //= POST_FORM_ACTION_URI ?><!--" method="POST">-->
-<!--        --><?php //= bitrix_sessid_post() ?>
-<!--		<div class="mf-name">-->
-<!--			<div class="mf-text">-->
-<!--                --><?php //= GetMessage("MFT_NAME") ?><!----><?php //if (empty($arParams["REQUIRED_FIELDS"]) || in_array(
-//                        "NAME",
-//                        $arParams["REQUIRED_FIELDS"],
-//                    )): ?><!--<span class="mf-req">*</span>--><?php //endif ?>
-<!--			</div>-->
-<!--			<input type="text" name="user_name" value="--><?php //= $arResult["AUTHOR_NAME"] ?><!--">-->
-<!--		</div>-->
-<!---->
-<!--		<div class="mf-phone">-->
-<!--			<div class="mf-text">-->
-<!--                --><?php //= GetMessage("MFT_PHONE") ?><!----><?php //if (empty($arParams["REQUIRED_FIELDS"]) || in_array(
-//                        "PHONE",
-//                        $arParams["REQUIRED_FIELDS"],
-//                    )): ?>
-<!--					<span class="mf-req">*</span>-->
-<!--                --><?php //endif ?>
-<!--			</div>-->
-<!--			<input type="text" name="user_phone" value="--><?php //= $arResult["AUTHOR_PHONE"] ?><!--">-->
-<!--		</div>-->
-<!---->
-<!--		<div class="mf-message">-->
-<!--			<div class="mf-text">-->
-<!--                --><?php //= GetMessage("MFT_MESSAGE") ?>
-<!--                -->
-<!--                --><?php //if (empty($arParams["REQUIRED_FIELDS"]) || in_array("MESSAGE", $arParams["REQUIRED_FIELDS"])): ?>
-<!--					<span class="mf-req">*</span>-->
-<!--                --><?php //endif ?>
-<!--			</div>-->
-<!--			<textarea name="MESSAGE" rows="5" cols="40">--><?php //= ($arResult["MESSAGE"] ?? '') ?><!--</textarea>-->
-<!--		</div>-->
-<!--        -->
-<!--        --><?php //if ($arParams["USE_CAPTCHA"] == "Y"): ?>
-<!--			<div class="mf-captcha">-->
-<!--				<div class="mf-text">--><?php //= GetMessage("MFT_CAPTCHA") ?><!--</div>-->
-<!--				<input type="hidden" name="captcha_sid" value="--><?php //= $arResult["capCode"] ?><!--">-->
-<!--				<img src="/bitrix/tools/captcha.php?captcha_sid=--><?php //= $arResult["capCode"] ?><!--" width="180" height="40"-->
-<!--				     alt="CAPTCHA">-->
-<!--				<div class="mf-text">--><?php //= GetMessage("MFT_CAPTCHA_CODE") ?><!--<span class="mf-req">*</span></div>-->
-<!--				<input type="text" name="captcha_word" size="30" maxlength="50" value="">-->
-<!--			</div>-->
-<!--        --><?php //endif; ?>
-<!--		<input type="hidden" name="PARAMS_HASH" value="--><?php //= $arResult["PARAMS_HASH"] ?><!--">-->
-<!--		<input type="submit" name="submit" value="--><?php //= GetMessage("MFT_SUBMIT") ?><!--">-->
-<!--	</form>-->
-<!--</div>-->

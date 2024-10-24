@@ -1,4 +1,6 @@
-<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+<?php
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 /** @var array $arParams */
@@ -16,8 +18,9 @@ $this->setFrameMode(true);
 ?>
 
 <div class="articles__main">
-	<ul class="articles-list">
-        <?php foreach ($arResult["ITEMS"] as $arItem): ?>
+    <ul class="articles-list">
+        <?php
+        foreach ($arResult["ITEMS"] as $arItem): ?>
             <?php
             $this->AddEditAction(
                 $arItem['ID'],
@@ -31,30 +34,29 @@ $this->setFrameMode(true);
                 ["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
             );
             ?>
-			<li class="articles-list__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-				<div class="articles-list__img-box">
-					<a class="articles-list__img-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
-						<picture>
-							<source media="(max-width: 475px)" srcset="<?= $arItem['PREVIEW_PICTURE']['SRC_MOBILE'] ?>">
-							<img class="articles-list__img"
-							     src="<?= $arItem['PREVIEW_PICTURE']['SRC_DESKTOP'] ?>"
-							     alt="<?= $arItem['NAME'] ?>">
-						</picture>
-					</a>
-				</div>
-				<div class="articles-list__content">
-					<a class="articles-list__content-title-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
-						<h3 class="articles-list__content-title"><?= $arItem['NAME'] ?>"</h3>
-					</a>
-					<div class="articles-list__content-description">
-						<p><?= $arItem['PREVIEW_TEXT'] ?>"⠀</p>
-					</div>
-					<a class="articles-list__content-btn-link btn btn__more"
-					   href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее</a>
-				</div>
-			</li>
-        <?php endforeach; ?>
-	</ul>
+            <li class="articles-list__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+                <div class="articles-list__img-box">
+                    <a class="articles-list__img-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+                        <img class="articles-list__img"
+                             src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>"
+                             alt="<?= $arItem['NAME'] ?>">
+                    </a>
+                </div>
+                <div class="articles-list__content">
+                    <a class="articles-list__content-title-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+                        <h3 class="articles-list__content-title"><?= $arItem['NAME'] ?>"</h3>
+                    </a>
+                    <div class="articles-list__content-description">
+                        <p><?= $arItem['PREVIEW_TEXT'] ?>"⠀</p>
+                    </div>
+                    <a class="articles-list__content-btn-link btn btn__more"
+                       href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее
+                    </a>
+                </div>
+            </li>
+        <?php
+        endforeach; ?>
+    </ul>
 </div>
 
 

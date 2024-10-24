@@ -41,7 +41,7 @@ $this->setFrameMode(true);
 					<a class="doctors-list__item-link" href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
 						<div class="doctors-list__item-img-box">
 							<img class="doctors-list__item-img"
-							     src="<?= $arItem['PREVIEW_PICTURE']['SRC_DESKTOP'] ?>" alt="<?= $arItem['NAME'] ?>">
+							     src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $arItem['NAME'] ?>">
 						</div>
 						<div class="doctors-list__item-content">
 							<h3 class="doctors-list__item-title"><?= $arItem['NAME'] ?></h3>

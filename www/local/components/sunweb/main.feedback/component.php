@@ -1,6 +1,7 @@
 <?php
 
 use Bitrix\Main\Event;
+use Bitrix\Main\Loader;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
@@ -63,13 +64,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset(
                 $arResult["ERROR_MESSAGE"][] = GetMessage("MF_CAPTHCA_EMPTY");
             }
         }
+
         if (empty($arResult["ERROR_MESSAGE"])) {
             $arFields = [
                 "AUTHOR" => $_POST["user_name"],
                 "PHONE" => $_POST["user_phone"],
                 "EMAIL_TO" => $arParams["EMAIL_TO"],
-                "TEXT" => $_POST["MESSAGE"],
+                "TEXT" => $_POST["MESSAGE"] ?? '',
+                "FEEDBACK_TYPE" => $_POST["feedback_type"]  ?? '',
             ];
+
+            if (Loader::includeModule('iblock')) {
+                $element = new CIBlockElement();
+                $iblockID = $arParams['IBLOCK_ID'];
+                $arTranslitParams = ["replace_space" => "-", "replace_other" => "-"];
+                $code = Cutil::translit(strtolower($arFields['AUTHOR']), "ru", $arTranslitParams);
+                $arLoadProductArray = [
+                    "IBLOCK_ID" => $iblockID,
+                    "ACTIVE" => "Y",
+                    "NAME" => $arFields['AUTHOR'],
+                    "CODE" => $code,
+                    "PREVIEW_TEXT" => $arFields['FEEDBACK_TYPE'],
+                    "DETAIL_TEXT" => $arFields['TEXT'],
+                    "PROPERTY_VALUES" => [
+                        "PHONE" => $arFields['PHONE'],
+                    ],
+                ];
+                $element->Add($arLoadProductArray);
+            }
             if (!empty($arParams["EVENT_MESSAGE_ID"])) {
                 foreach ($arParams["EVENT_MESSAGE_ID"] as $v) {
                     if (intval($v) > 0) {
@@ -79,17 +101,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset(
             } else {
                 CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields);
             }
+
             $_SESSION["MF_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
             $_SESSION["MF_PHONE"] = htmlspecialcharsbx($_POST["user_phone"]);
             $event = new Event('main', 'onFeedbackFormSubmit', $arFields);
             $event->send();
             LocalRedirect($APPLICATION->GetCurPageParam("success=" . $arResult["PARAMS_HASH"], ["success"]));
         }
-        
+
         $arResult["MESSAGE"] = htmlspecialcharsbx($_POST["MESSAGE"]);
         $arResult["AUTHOR_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
         $arResult["AUTHOR_PHONE"] = htmlspecialcharsbx($_POST["user_phone"]);
-        
+        $arResult["FEEDBACK_TYPE"] = htmlspecialcharsbx($_POST["feedback_type"]);
     } else {
         $arResult["ERROR_MESSAGE"][] = GetMessage("MF_SESS_EXP");
     }
@@ -97,19 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset(
     $arResult["OK_MESSAGE"] = $arParams["OK_TEXT"];
 }
 
-if (empty($arResult["ERROR_MESSAGE"])) {
-//    if ($USER->IsAuthorized()) {
-//        $arResult["AUTHOR_NAME"] = $USER->GetFormattedName(false);
-//        $arResult["AUTHOR_EMAIL"] = htmlspecialcharsbx($USER->GetEmail());
-//    } else {
-//        if ($_SESSION["MF_NAME"] <> '') {
-//            $arResult["AUTHOR_NAME"] = htmlspecialcharsbx($_SESSION["MF_NAME"]);
-//        }
-//        if ($_SESSION["MF_EMAIL"] <> '') {
-//            $arResult["AUTHOR_EMAIL"] = htmlspecialcharsbx($_SESSION["MF_EMAIL"]);
-//        }
-//    }
-}
 
 if ($arParams["USE_CAPTCHA"] == "Y") {
     $arResult["capCode"] = htmlspecialcharsbx($APPLICATION->CaptchaGetCode());

@@ -1,6 +1,7 @@
 <?php
 $MESS ['MFT_TITLE'] = "Оставить отзыв";
 $MESS ['MFT_NAME'] = "Имя";
+$MESS ['MFT_MESSAGE'] = "Текст отзыва";
 $MESS ['MFT_PHONE'] = "Номер телефона";
 $MESS ['MFT_CLINIC'] = "О клинике";
 $MESS ['MFT_DOCTOR'] = "О враче";
@@ -10,7 +11,6 @@ $MESS ['MFT_AGREE_TWO'] = "политикой конфиденциальност
 $MESS ['MFT_SUBMIT'] = "Отправить";
 
 $MESS ['MFT_EMAIL'] = "Ваш E-mail";
-$MESS ['MFT_MESSAGE'] = "Текст отзыва";
 $MESS ['MFT_CAPTCHA'] = "Защита от автоматических сообщений";
 $MESS ['MFT_CAPTCHA_CODE'] = "Введите слово на картинке";
 $MESS ['MFT_SUBMIT'] = "Отправить";

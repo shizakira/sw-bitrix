@@ -3,11 +3,11 @@ $arResult['SPECIALISTS_COUNT'] = count($arResult['ITEMS']);
 
 foreach ($arResult['ITEMS'] as $key =>$arItem) {
     $arFileTmp = CFile::ResizeImageGet(
-        $arItem['PREVIEW_PICTURE'],
+        $arItem["PREVIEW_PICTURE"]["ID"],
         ["width" => 302, "height" => 218],
-        BX_RESIZE_IMAGE_PROPORTIONAL,
-        true,
+        BX_RESIZE_IMAGE_EXACT,
+        true
     );
     
-    $arResult['ITEMS'][$key]['PREVIEW_PICTURE']['SRC_DESKTOP'] = $arFileTmp['src'];
+    $arResult['ITEMS'][$key]['PREVIEW_PICTURE']['SRC'] = $arFileTmp['src'];
 }

@@ -134,42 +134,23 @@ $APPLICATION->SetTitle('Главная');
                     ],
                     false,
                 ); ?>
-				<div class="articles__form">
-					<form class="form">
-						<h3 class="form__title">Оставить отзыв</h3>
-						<label class="form__label">
-							<input class="form__input form__input-radio" type="radio" name="feedback-form" checked>
-							<span class="form__input-radio-style"></span>
-							<div class="form__label-text">О клинике</div>
-						</label>
-						<label class="form__label">
-							<input class="form__input form__input-radio" type="radio" name="feedback-form">
-							<span class="form__input-radio-style"></span>
-							<div class="form__label-text">О враче</div>
-						</label>
-						<label class="form__label">
-							<input class="form__input form__input-radio" type="radio" name="feedback-form">
-							<span class="form__input-radio-style"></span>
-							<div class="form__label-text">Об услуге</div>
-						</label>
-						<div class="form__textarea-box decore--message">
-							<textarea class="form__textarea" name="" id="" placeholder="Текст отзыва"></textarea>
-						</div>
-						<div class="form__input-box decore--user">
-							<input class="form__input" type="text" name="" placeholder="Имя*" required>
-						</div>
-						<div class="form__input-box decore--phone">
-							<input class="form__input" type="tel" name="" id="" placeholder="Номер телефона*" required>
-						</div>
-						<button class="form__btn btn btn__tertiary" type="submit">
-						</button>
-						<div class="form__agree">
-							<p class="form__agree-text">Нажимая кнопку “Отправить”, вы соглашаетесь с
-								<a class="form__agree-link" href="javascript:">политикой конфиденциальности</a>
-							</p>
-						</div>
-					</form>
-				</div>
+                <?php $APPLICATION->IncludeComponent(
+                    "sunweb:main.feedback",
+                    "articles_form",
+                    [
+                        "EMAIL_TO" => "test@email.com",
+                        "EVENT_MESSAGE_ID" => "",
+                        "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+                        "REQUIRED_FIELDS" => [
+                            0 => "NAME",
+                            1 => "PHONE",
+                        ],
+                        "USE_CAPTCHA" => "N",
+                        "AJAX_MODE" => "Y",
+                        "IBLOCK_ID" => 3,
+                    ],
+                    false,
+                ); ?>
 			</div>
 		</div>
 	</section>
