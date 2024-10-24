@@ -40,30 +40,38 @@
         <ul class="nav-sub__list">
             <?php else: ?>
             <li class="nav-sub__list-item<?= $arItem["SELECTED"] ? ' item-selected' : '' ?>">
-                <a href="<?= $arItem["LINK"] ?>" class="nav-sub__list-link parent"><?= $arItem["TEXT"] ?></a>
+                <a href="<?= $arItem["LINK"] ?>" class="nav-sub__list-link parent">
+	                <?= $arItem["TEXT"] ?>
+                </a>
                 <ul>
                     <?php endif ?>
                     <?php else: ?>
                         <?php if ($arItem["PERMISSION"] > "D"): ?>
                             <?php if ($arItem["DEPTH_LEVEL"] == 1): ?>
                                 <li class="nav__list-item">
-                                    <a href="<?= $arItem["LINK"] ?>" class="nav__list-link"><?= $arItem["TEXT"] ?></a>
+                                    <a href="<?= $arItem["LINK"] ?>" class="nav__list-link">
+	                                    <?= $arItem["TEXT"] ?>
+                                    </a>
                                 </li>
                             <?php else: ?>
                                 <li class="nav-sub__list-item">
-                                    <a href="<?= $arItem["LINK"] ?>" class="nav-sub__list-link"><?= $arItem["TEXT"] ?></a>
+                                    <a href="<?= $arItem["LINK"] ?>" class="nav-sub__list-link">
+	                                    <?= $arItem["TEXT"] ?>
+                                    </a>
                                 </li>
                             <?php endif ?>
                         <?php else: ?>
                             <?php if ($arItem["DEPTH_LEVEL"] == 1): ?>
                                 <li class="nav__list-item">
-                                    <a href="" class="nav__list-link" title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>">
+                                    <a href="" class="nav__list-link"
+                                       title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>">
                                         <?= $arItem["TEXT"] ?>
                                     </a>
                                 </li>
                             <?php else: ?>
                                 <li class="nav-sub__list-item">
-                                    <a href="" class="denied" title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>">
+                                    <a href="" class="denied"
+                                       title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>">
                                         <?= $arItem["TEXT"] ?>
                                     </a>
                                 </li>

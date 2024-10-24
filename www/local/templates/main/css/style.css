@@ -796,6 +796,11 @@ img {
     height: 123px;
     min-height: 123px;
 }
+.modal__content-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .modal.modal--top-images .modal__content-img {
     width: 100%;

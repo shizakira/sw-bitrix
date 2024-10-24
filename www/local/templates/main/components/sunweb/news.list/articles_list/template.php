@@ -19,8 +19,7 @@ $this->setFrameMode(true);
 
 <div class="articles__main">
     <ul class="articles-list">
-        <?php
-        foreach ($arResult["ITEMS"] as $arItem): ?>
+        <?php foreach ($arResult["ITEMS"] as $arItem): ?>
             <?php
             $this->AddEditAction(
                 $arItem['ID'],
@@ -50,12 +49,12 @@ $this->setFrameMode(true);
                         <p><?= $arItem['PREVIEW_TEXT'] ?>"⠀</p>
                     </div>
                     <a class="articles-list__content-btn-link btn btn__more"
-                       href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее
+                       href="<?= $arItem['DETAIL_PAGE_URL'] ?>">
+	                    Подробнее
                     </a>
                 </div>
             </li>
-        <?php
-        endforeach; ?>
+        <?php endforeach; ?>
     </ul>
 </div>
 
